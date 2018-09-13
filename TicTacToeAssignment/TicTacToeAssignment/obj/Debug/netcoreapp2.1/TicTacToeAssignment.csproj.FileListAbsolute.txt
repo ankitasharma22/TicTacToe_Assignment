@@ -1,0 +1,14 @@
+C:\Users\asharma\source\repos\TicTacToeAssignment\TicTacToeAssignment\obj\Debug\netcoreapp2.1\TicTacToeAssignment.csprojResolveAssemblyReference.cache
+C:\Users\asharma\source\repos\TicTacToeAssignment\TicTacToeAssignment\obj\Debug\netcoreapp2.1\TicTacToeAssignment.csproj.CoreCompileInputs.cache
+C:\Users\asharma\source\repos\TicTacToeAssignment\TicTacToeAssignment\obj\Debug\netcoreapp2.1\TicTacToeAssignment.RazorAssemblyInfo.cache
+C:\Users\asharma\source\repos\TicTacToeAssignment\TicTacToeAssignment\obj\Debug\netcoreapp2.1\TicTacToeAssignment.RazorAssemblyInfo.cs
+C:\Users\asharma\source\repos\TicTacToeAssignment\TicTacToeAssignment\obj\Debug\netcoreapp2.1\TicTacToeAssignment.AssemblyInfoInputs.cache
+C:\Users\asharma\source\repos\TicTacToeAssignment\TicTacToeAssignment\obj\Debug\netcoreapp2.1\TicTacToeAssignment.AssemblyInfo.cs
+C:\Users\asharma\source\repos\TicTacToeAssignment\TicTacToeAssignment\bin\Debug\netcoreapp2.1\TicTacToeAssignment.deps.json
+C:\Users\asharma\source\repos\TicTacToeAssignment\TicTacToeAssignment\bin\Debug\netcoreapp2.1\TicTacToeAssignment.runtimeconfig.json
+C:\Users\asharma\source\repos\TicTacToeAssignment\TicTacToeAssignment\bin\Debug\netcoreapp2.1\TicTacToeAssignment.runtimeconfig.dev.json
+C:\Users\asharma\source\repos\TicTacToeAssignment\TicTacToeAssignment\bin\Debug\netcoreapp2.1\TicTacToeAssignment.dll
+C:\Users\asharma\source\repos\TicTacToeAssignment\TicTacToeAssignment\bin\Debug\netcoreapp2.1\TicTacToeAssignment.pdb
+C:\Users\asharma\source\repos\TicTacToeAssignment\TicTacToeAssignment\obj\Debug\netcoreapp2.1\TicTacToeAssignment.RazorTargetAssemblyInfo.cache
+C:\Users\asharma\source\repos\TicTacToeAssignment\TicTacToeAssignment\obj\Debug\netcoreapp2.1\TicTacToeAssignment.dll
+C:\Users\asharma\source\repos\TicTacToeAssignment\TicTacToeAssignment\obj\Debug\netcoreapp2.1\TicTacToeAssignment.pdb

@@ -1,0 +1,4 @@
+CREATE TABLE UserDetails(Id INT IDENTITY(1,1) PRIMARY KEY, FName varchar(30) Not null, LName varchar(30) not null, UserName varchar(30) not null, TokenID Int not null)
+
+
+CREATE TABLE LogDetails(LogId int identity(1,1) Primary Key, Request varchar(150), Response varchar(150), Exception varchar(150), Comments varchar(50))

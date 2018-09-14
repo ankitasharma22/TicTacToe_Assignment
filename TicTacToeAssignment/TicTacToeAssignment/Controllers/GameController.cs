@@ -13,7 +13,7 @@ namespace TicTacToeAssignment.Controllers
         /// <summary>
         /// Valid Board IDs: 00, 01, 02; 10, 11, 12; 20, 21, 22
         /// </summary>
-        static int[,] board = new int[3, 3]; //maintains 0,1: 0 = not used block, 1 = used block
+    
         static List<int> TrackPlayers = new List<int>(); //tracks users playing 
         static bool player1Playing = false;
         static List<string> BlockedBoxByPlayer1 = new List<string>(); //TrackPlayer[0] contains player1 
@@ -66,13 +66,12 @@ namespace TicTacToeAssignment.Controllers
                 return "Draw...You can start new game!";
             }//draw 
 
-            for (int i = 0; i < board.Length; i++)
+            for (int i = 0; i < 3; i++)
             {
-                for (int j = 0; j < board.Length; j++)
+                for (int j = 0; j < 3; j++)
                 {
                     if (i == row && j == column)
-                    {
-                        board[i, j] = 1;
+                    { 
                         if (player1Playing)
                         {
                             winnerId = CheckWinner(ref BlockedBoxByPlayer1, 1);

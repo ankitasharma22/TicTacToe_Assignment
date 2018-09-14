@@ -63,7 +63,7 @@ namespace TicTacToeAssignment.Controllers
                 TrackPlayers.Clear();
                 BlockedBoxByPlayer1.Clear();
                 BlockedBoxByPlayer2.Clear();
-                return "Draw";
+                return "Draw...You can start new game!";
             }//draw 
 
             for (int i = 0; i < board.Length; i++)
@@ -77,13 +77,13 @@ namespace TicTacToeAssignment.Controllers
                         {
                             winnerId = CheckWinner(ref BlockedBoxByPlayer1, 1);
                             if (winnerId != 999)
-                                return "Player 1 Wins";
+                                return "Player 1 Wins...You can start new game!";
                         }
                         else
                         {
                             winnerId = CheckWinner(ref BlockedBoxByPlayer2, 2);
                             if (winnerId != 999)
-                                return "Player 2 Wins";
+                                return "Player 2 Wins...You can start new game!";
                         }
                         break;
                     }
@@ -168,7 +168,7 @@ namespace TicTacToeAssignment.Controllers
                 TrackPlayers.Clear();
                 BlockedBoxByPlayer1.Clear();
                 BlockedBoxByPlayer2.Clear();
-                return "Winner - 1"; //player1 - Winner
+                return "Winner - 1... You can start new game!"; //player1 - Winner
             }
             else
             {
@@ -178,14 +178,14 @@ namespace TicTacToeAssignment.Controllers
                     TrackPlayers.Clear();
                     BlockedBoxByPlayer1.Clear();
                     BlockedBoxByPlayer2.Clear();
-                    return "Winner - 2";
+                    return "Winner - 2...You can start new game!";
                 }
                 if (BlockedBoxByPlayer1.Count + BlockedBoxByPlayer2.Count == 9)
                 {
                     TrackPlayers.Clear();
                     BlockedBoxByPlayer1.Clear();
                     BlockedBoxByPlayer2.Clear();
-                    return "Draw";
+                    return "Draw... You can start new game!";
                 }//draw 
                 else
                     return "Progress";

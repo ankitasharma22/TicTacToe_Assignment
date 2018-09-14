@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using TicTacToeAssignment.Authorization;
@@ -30,12 +30,14 @@ namespace TicTacToeAssignment.Controllers
                 throw new Exception("Invalid board box Id");
 
             if (!TrackPlayers.Contains(tokenId))
+            {
                 TrackPlayers.Add(tokenId); //player track 
-
+            }
             if (TrackPlayers.Count == 3)
+            {
+                TrackPlayers.Remove(TrackPlayers[TrackPlayers.Count - 1]);
                 throw new Exception("3 users cant play!");
-
-
+            }
             int row = int.Parse(boxId[0].ToString());
             int column = int.Parse(boxId[1].ToString());
 
@@ -47,20 +49,22 @@ namespace TicTacToeAssignment.Controllers
             else
                 player1Playing = false;
 
+            if (BlockedBoxByPlayer1.Contains(boxId) || BlockedBoxByPlayer2.Contains(boxId))
+                throw new Exception("Block of board blocked!");
+
+
             if (player1Playing)
-            {
-                if (BlockedBoxByPlayer1.Contains(boxId))
-                    throw new Exception("Block of board blocked!");
-                else
-                    BlockedBoxByPlayer1.Add(boxId);
-            }
+                BlockedBoxByPlayer1.Add(boxId);
             else
+                BlockedBoxByPlayer2.Add(boxId);
+
+            if (BlockedBoxByPlayer1.Count + BlockedBoxByPlayer2.Count == 9)
             {
-                if (BlockedBoxByPlayer2.Contains(boxId))
-                    throw new Exception("Block of board blocked!");
-                else
-                    BlockedBoxByPlayer2.Add(boxId);
-            }
+                TrackPlayers.Clear();
+                BlockedBoxByPlayer1.Clear();
+                BlockedBoxByPlayer2.Clear();
+                return "Draw";
+            }//draw 
 
             for (int i = 0; i < board.Length; i++)
             {
@@ -93,22 +97,61 @@ namespace TicTacToeAssignment.Controllers
         {
             int currentPlayer = TrackPlayers[TrackPlayers.Count - 1];
             if (BlockedBox.Contains("00") && BlockedBox.Contains("01") && BlockedBox.Contains("02")) //horizontal row 1 
+            {
+                TrackPlayers.Clear();
+                BlockedBoxByPlayer1.Clear();
+                BlockedBoxByPlayer2.Clear();
                 return PlayerId;
+            }
             else if (BlockedBox.Contains("10") && BlockedBox.Contains("11") && BlockedBox.Contains("12")) //horizontal row 2 
+            {
+                TrackPlayers.Clear();
+                BlockedBoxByPlayer1.Clear();
+                BlockedBoxByPlayer2.Clear();
                 return PlayerId;
+            }
             else if (BlockedBox.Contains("20") && BlockedBox.Contains("21") && BlockedBox.Contains("22")) //horizontal row 3 
+            {
+                TrackPlayers.Clear();
+                BlockedBoxByPlayer1.Clear();
+                BlockedBoxByPlayer2.Clear();
                 return PlayerId;
+            }
             else if (BlockedBox.Contains("00") && BlockedBox.Contains("10") && BlockedBox.Contains("20")) //vertical row 1 
+            {
+                TrackPlayers.Clear();
+                BlockedBoxByPlayer1.Clear();
+                BlockedBoxByPlayer2.Clear();
                 return PlayerId;
+            }
             else if (BlockedBox.Contains("01") && BlockedBox.Contains("11") && BlockedBox.Contains("21")) //vertical row 2 
+            {
+                TrackPlayers.Clear();
+                BlockedBoxByPlayer1.Clear();
+                BlockedBoxByPlayer2.Clear();
                 return PlayerId;
+            }
             else if (BlockedBox.Contains("02") && BlockedBox.Contains("12") && BlockedBox.Contains("22")) //vertical row 3 
+            {
+                TrackPlayers.Clear();
+                BlockedBoxByPlayer1.Clear();
+                BlockedBoxByPlayer2.Clear();
                 return PlayerId;
+            }
             else if (BlockedBox.Contains("00") && BlockedBox.Contains("11") && BlockedBox.Contains("22")) //diagonal 1 
+            {
+                TrackPlayers.Clear();
+                BlockedBoxByPlayer1.Clear();
+                BlockedBoxByPlayer2.Clear();
                 return PlayerId;
+            }
             else if (BlockedBox.Contains("02") && BlockedBox.Contains("11") && BlockedBox.Contains("20")) //diagonal 1 
+            {
+                TrackPlayers.Clear();
+                BlockedBoxByPlayer1.Clear();
+                BlockedBoxByPlayer2.Clear();
                 return PlayerId;
-
+            }
             return 999;
         }
 
@@ -121,15 +164,29 @@ namespace TicTacToeAssignment.Controllers
             int winner = 0;
             winner = CheckWinner(ref BlockedBoxByPlayer1, 1);
             if (winner == 1)
+            {
+                TrackPlayers.Clear();
+                BlockedBoxByPlayer1.Clear();
+                BlockedBoxByPlayer2.Clear();
                 return "Winner - 1"; //player1 - Winner
+            }
             else
             {
                 winner = CheckWinner(ref BlockedBoxByPlayer2, 2); //player2 - Winner
                 if (winner == 2)
+                {
+                    TrackPlayers.Clear();
+                    BlockedBoxByPlayer1.Clear();
+                    BlockedBoxByPlayer2.Clear();
                     return "Winner - 2";
+                }
                 if (BlockedBoxByPlayer1.Count + BlockedBoxByPlayer2.Count == 9)
+                {
+                    TrackPlayers.Clear();
+                    BlockedBoxByPlayer1.Clear();
+                    BlockedBoxByPlayer2.Clear();
                     return "Draw";
-                //draw 
+                }//draw 
                 else
                     return "Progress";
             }
